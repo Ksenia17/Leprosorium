@@ -21,7 +21,7 @@ before '/secure/*' do
 end
 
 get '/' do
-  erb 'Can you handle a <a href="/secure/place">secret</a>?'
+  erb "Hello! <a href=\"https://github.com/bootstrap-ruby/sinatra-bootstrap\">Original</a>pattern has been modified for <a href=\"http://rubyschool.us/\">Ruby School</a>"
 end
 
 get '/login/form' do
@@ -41,4 +41,8 @@ end
 
 get '/secure/place' do
   erb 'This is a secret place that only <%=session[:identity]%> has access to!'
+end
+
+get '/new' do
+  erb "Hello World"
 end
