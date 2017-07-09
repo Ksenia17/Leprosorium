@@ -41,6 +41,10 @@ before '/secure/*' do
 end
 
 get '/' do
+  # выбираем список постов
+  
+  @rezults = db.execute'select * from Posts order by desc'
+  
   erb :index
 end
 
