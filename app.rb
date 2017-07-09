@@ -84,3 +84,8 @@ post '/new' do
   # перенаправление на главную страницу
   redirect to '/'  
 end
+
+get '/details/:post_id' do
+  post_id = params[:post_id]
+  erb "Displaining information for post with id #{post_id}"
+end  
