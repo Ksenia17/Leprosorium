@@ -130,6 +130,7 @@ post '/details/:post_id' do
               )',[content,post_id]
   
   # перенаправление на страницу поста
+  # save comment to database
   redirect to ('/details/'+post_id)  
 
 end 
