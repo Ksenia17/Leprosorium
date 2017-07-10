@@ -17,13 +17,24 @@ configure do
  # enable :sessions
  # инициализация БД
  init_db
- # создает таблицу, если она не существует
+ # создает таблицу Posts, если она не существует
  @db.execute 'CREATE TABLE IF NOT EXISTS Posts
            ( 
              id INTEGER PRIMARY KEY AUTOINCREMENT,
              created_date TEXT,
              content TEXT
            )'
+  # создает таблицу Comments, если она не существует         
+  @db.execute 'CREATE TABLE IF NOT EXISTS Comments
+           ( 
+             id INTEGER PRIMARY KEY AUTOINCREMENT,
+             created_date TEXT,
+             content TEXT,
+             post_id integer
+           )'         
+
+
+
 end
 
 helpers do
